@@ -59,10 +59,14 @@ const StoreMap: React.FC<StoreMapProps> = ({ items, currentStep = 0 }) => {
               r="8"
               fill="#22c55e"
             />
-            <Home className="w-4 h-4" style={{
-              x: scaleX(storeLayout.entrance.x) - 8,
-              y: scaleY(storeLayout.entrance.y) - 8
-            }} />
+            <foreignObject
+              x={scaleX(storeLayout.entrance.x) - 8}
+              y={scaleY(storeLayout.entrance.y) - 8}
+              width="16"
+              height="16"
+            >
+              <Home className="w-4 h-4 text-white" />
+            </foreignObject>
           </g>
           
           {/* Checkout */}
@@ -73,10 +77,14 @@ const StoreMap: React.FC<StoreMapProps> = ({ items, currentStep = 0 }) => {
               r="8"
               fill="#f59e0b"
             />
-            <ShoppingCart className="w-4 h-4" style={{
-              x: scaleX(storeLayout.checkout.x) - 8,
-              y: scaleY(storeLayout.checkout.y) - 8
-            }} />
+            <foreignObject
+              x={scaleX(storeLayout.checkout.x) - 8}
+              y={scaleY(storeLayout.checkout.y) - 8}
+              width="16"
+              height="16"
+            >
+              <ShoppingCart className="w-4 h-4 text-white" />
+            </foreignObject>
           </g>
           
           {/* Item Locations */}
