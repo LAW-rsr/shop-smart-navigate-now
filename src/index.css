@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 0 113 206;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -24,7 +25,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 255 194 32;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -37,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -100,4 +94,58 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, rgb(0, 113, 206) 0%, rgb(51, 144, 255) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, rgb(255, 194, 32) 0%, rgb(255, 220, 102) 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, rgb(0, 113, 206) 0%, rgb(255, 194, 32) 100%);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom checkboxes */
+.custom-checkbox {
+  @apply relative cursor-pointer;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  @apply sr-only;
+}
+
+.custom-checkbox .checkmark {
+  @apply absolute top-0 left-0 h-5 w-5 bg-white border-2 border-gray-300 rounded transition-all duration-200;
+}
+
+.custom-checkbox input[type="checkbox"]:checked ~ .checkmark {
+  @apply bg-buyway-blue border-buyway-blue;
+}
+
+.custom-checkbox .checkmark:after {
+  content: "";
+  @apply absolute hidden;
+}
+
+.custom-checkbox input[type="checkbox"]:checked ~ .checkmark:after {
+  @apply block;
+}
+
+.custom-checkbox .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }
