@@ -1,331 +1,287 @@
 
 import { StoreItem, StoreLayout } from '../types/store';
 
-// Mock store layout - represents a typical grocery store
+// Updated store layout based on your dataset - represents a typical grocery store
 export const storeLayout: StoreLayout = {
-  entrance: { x: 50, y: 0 },
-  checkout: { x: 90, y: 10 },
+  entrance: { x: 50, y: 5 },
+  checkout: { x: 85, y: 5 },
   sections: {
-    'produce': { x: 10, y: 20, width: 30, height: 15 },
-    'dairy': { x: 50, y: 20, width: 20, height: 15 },
-    'meat': { x: 80, y: 20, width: 20, height: 15 },
-    'frozen': { x: 10, y: 50, width: 30, height: 15 },
-    'beverages': { x: 50, y: 50, width: 20, height: 15 },
-    'snacks': { x: 80, y: 50, width: 20, height: 15 },
-    'bakery': { x: 10, y: 80, width: 30, height: 15 },
-    'deli': { x: 50, y: 80, width: 20, height: 15 },
-    'pharmacy': { x: 80, y: 80, width: 20, height: 15 }
+    'fruits': { x: 5, y: 15, width: 15, height: 20 },
+    'produce': { x: 25, y: 15, width: 15, height: 20 },
+    'frozen': { x: 45, y: 15, width: 15, height: 20 },
+    'bakery': { x: 65, y: 15, width: 15, height: 20 },
+    'dairy': { x: 85, y: 15, width: 15, height: 20 },
+    'endcaps': { x: 5, y: 40, width: 95, height: 10 },
+    'aisles': { x: 5, y: 55, width: 95, height: 40 }
   }
 };
 
-// Comprehensive store inventory
+// Comprehensive store inventory based on your dataset
 export const storeItems: StoreItem[] = [
-  // Produce Section
+  // Location 1 - Fruits (Peripheral)
   {
     id: '1',
     name: 'Bananas',
-    category: 'Produce',
-    subcategory: 'Fruits',
+    category: 'Fruits',
+    subcategory: 'Bananas (1)',
     location: {
-      section: 'produce',
+      section: 'fruits',
       aisle: 1,
       shelf: 'A',
-      position: { x: 15, y: 25 }
+      position: { x: 10, y: 20 }
     },
     fixtureType: 'peripheral'
   },
   {
     id: '2',
-    name: 'Apples',
-    category: 'Produce',
-    subcategory: 'Fruits',
+    name: 'Oranges',
+    category: 'Fruits',
+    subcategory: 'Citrus (2)',
     location: {
-      section: 'produce',
+      section: 'fruits',
       aisle: 1,
       shelf: 'A',
-      position: { x: 20, y: 25 }
+      position: { x: 12, y: 22 }
     },
     fixtureType: 'peripheral'
   },
   {
     id: '3',
-    name: 'Lettuce',
-    category: 'Produce',
-    subcategory: 'Vegetables',
+    name: 'Apples',
+    category: 'Fruits',
+    subcategory: 'Hard Fruit (3)',
     location: {
-      section: 'produce',
+      section: 'fruits',
       aisle: 1,
       shelf: 'B',
-      position: { x: 25, y: 30 }
+      position: { x: 15, y: 25 }
     },
     fixtureType: 'peripheral'
   },
   {
     id: '4',
-    name: 'Tomatoes',
-    category: 'Produce',
-    subcategory: 'Vegetables',
+    name: 'Grapes',
+    category: 'Fruits',
+    subcategory: 'Soft Fruit (4)',
     location: {
-      section: 'produce',
+      section: 'fruits',
       aisle: 1,
       shelf: 'B',
-      position: { x: 30, y: 30 }
-    },
-    fixtureType: 'peripheral'
-  },
-  {
-    id: '5',
-    name: 'Carrots',
-    category: 'Produce',
-    subcategory: 'Vegetables',
-    location: {
-      section: 'produce',
-      aisle: 1,
-      shelf: 'C',
-      position: { x: 35, y: 25 }
+      position: { x: 17, y: 27 }
     },
     fixtureType: 'peripheral'
   },
 
-  // Dairy Section
+  // Location 2 - Produce (Peripheral)
   {
-    id: '6',
-    name: 'Milk',
-    category: 'Dairy',
-    subcategory: 'Beverages',
+    id: '5',
+    name: 'Carrots',
+    category: 'Produce',
+    subcategory: 'Root Vegetables (5)',
     location: {
-      section: 'dairy',
+      section: 'produce',
       aisle: 2,
       shelf: 'A',
-      position: { x: 55, y: 25 }
+      position: { x: 30, y: 20 }
+    },
+    fixtureType: 'peripheral'
+  },
+  {
+    id: '6',
+    name: 'Lettuce',
+    category: 'Produce',
+    subcategory: 'Leafy Green Vegetables (6)',
+    location: {
+      section: 'produce',
+      aisle: 2,
+      shelf: 'A',
+      position: { x: 32, y: 22 }
     },
     fixtureType: 'peripheral'
   },
   {
     id: '7',
-    name: 'Cheese',
-    category: 'Dairy',
-    subcategory: 'Cheese',
+    name: 'Pre-cut Vegetables',
+    category: 'Produce',
+    subcategory: 'Ready Cut Vegetables (7)',
     location: {
-      section: 'dairy',
+      section: 'produce',
       aisle: 2,
       shelf: 'B',
-      position: { x: 60, y: 30 }
+      position: { x: 35, y: 25 }
     },
     fixtureType: 'peripheral'
   },
+
+  // Location 3 - Frozen Food (Peripheral)
   {
     id: '8',
-    name: 'Yogurt',
-    category: 'Dairy',
-    subcategory: 'Yogurt',
+    name: 'Frozen Vegetables',
+    category: 'Frozen Food',
+    subcategory: 'Frozen Vegetables (9)',
     location: {
-      section: 'dairy',
-      aisle: 2,
-      shelf: 'C',
-      position: { x: 65, y: 25 }
+      section: 'frozen',
+      aisle: 3,
+      shelf: 'A',
+      position: { x: 50, y: 20 }
     },
     fixtureType: 'peripheral'
   },
-
-  // Meat Section
   {
     id: '9',
-    name: 'Chicken Breast',
-    category: 'Meat',
-    subcategory: 'Poultry',
+    name: 'Frozen Pizza',
+    category: 'Frozen Food',
+    subcategory: 'Frozen Pizzas (11)',
     location: {
-      section: 'meat',
-      aisle: 3,
-      shelf: 'A',
-      position: { x: 85, y: 25 }
-    },
-    fixtureType: 'peripheral'
-  },
-  {
-    id: '10',
-    name: 'Ground Beef',
-    category: 'Meat',
-    subcategory: 'Beef',
-    location: {
-      section: 'meat',
+      section: 'frozen',
       aisle: 3,
       shelf: 'B',
-      position: { x: 90, y: 30 }
+      position: { x: 55, y: 25 }
     },
     fixtureType: 'peripheral'
   },
 
-  // Frozen Section
+  // Location 4 - Bakery (Peripheral)
   {
-    id: '11',
-    name: 'Frozen Pizza',
-    category: 'Frozen',
-    subcategory: 'Meals',
+    id: '10',
+    name: 'Bread',
+    category: 'Bakery',
+    subcategory: 'Fresh Bread (14)',
     location: {
-      section: 'frozen',
+      section: 'bakery',
       aisle: 4,
       shelf: 'A',
-      position: { x: 15, y: 55 }
+      position: { x: 70, y: 20 }
     },
-    fixtureType: 'aisle'
+    fixtureType: 'peripheral'
   },
+
+  // Location 5 - Fresh Dairy (Endcap)
+  {
+    id: '11',
+    name: 'Milk',
+    category: 'Fresh Dairy Food',
+    subcategory: 'Fresh Dairy Food (17)',
+    location: {
+      section: 'dairy',
+      aisle: 5,
+      shelf: 'A',
+      position: { x: 90, y: 20 }
+    },
+    fixtureType: 'endcap'
+  },
+
+  // Aisle Items
   {
     id: '12',
-    name: 'Ice Cream',
-    category: 'Frozen',
-    subcategory: 'Desserts',
+    name: 'Mediterranean Food',
+    category: 'Appetizers',
+    subcategory: 'Mediterranean Food (25)',
     location: {
-      section: 'frozen',
-      aisle: 4,
-      shelf: 'B',
-      position: { x: 25, y: 60 }
+      section: 'aisles',
+      aisle: 13,
+      shelf: 'A',
+      position: { x: 15, y: 65 }
     },
     fixtureType: 'aisle'
   },
   {
     id: '13',
-    name: 'Frozen Vegetables',
-    category: 'Frozen',
-    subcategory: 'Vegetables',
+    name: 'Salad Dressing',
+    category: 'Condiments',
+    subcategory: 'Salad Essentials (28)',
     location: {
-      section: 'frozen',
-      aisle: 4,
-      shelf: 'C',
-      position: { x: 35, y: 55 }
+      section: 'aisles',
+      aisle: 14,
+      shelf: 'A',
+      position: { x: 25, y: 70 }
     },
     fixtureType: 'aisle'
   },
-
-  // Beverages Section
   {
     id: '14',
-    name: 'Orange Juice',
-    category: 'Beverages',
-    subcategory: 'Juices',
+    name: 'Potato Chips',
+    category: 'Chips',
+    subcategory: 'Regular Chips (34)',
     location: {
-      section: 'beverages',
-      aisle: 5,
+      section: 'aisles',
+      aisle: 16,
       shelf: 'A',
-      position: { x: 55, y: 55 }
+      position: { x: 35, y: 75 }
     },
     fixtureType: 'aisle'
   },
   {
     id: '15',
-    name: 'Soda',
-    category: 'Beverages',
-    subcategory: 'Soft Drinks',
+    name: 'Beer',
+    category: 'Beer',
+    subcategory: 'Bottle & Can Beer (38)',
     location: {
-      section: 'beverages',
-      aisle: 5,
-      shelf: 'B',
-      position: { x: 60, y: 60 }
+      section: 'aisles',
+      aisle: 17,
+      shelf: 'A',
+      position: { x: 45, y: 80 }
     },
     fixtureType: 'aisle'
   },
   {
     id: '16',
-    name: 'Water Bottles',
-    category: 'Beverages',
-    subcategory: 'Water',
+    name: 'Water',
+    category: 'Water & Energy Drinks',
+    subcategory: 'Water (42)',
     location: {
-      section: 'beverages',
-      aisle: 5,
-      shelf: 'C',
-      position: { x: 65, y: 55 }
+      section: 'aisles',
+      aisle: 18,
+      shelf: 'A',
+      position: { x: 55, y: 85 }
     },
     fixtureType: 'aisle'
   },
-
-  // Snacks Section
   {
     id: '17',
-    name: 'Potato Chips',
-    category: 'Snacks',
-    subcategory: 'Chips',
+    name: 'Soda',
+    category: 'Soda & Soft Drinks',
+    subcategory: 'Soda (44)',
     location: {
-      section: 'snacks',
-      aisle: 6,
+      section: 'aisles',
+      aisle: 19,
       shelf: 'A',
-      position: { x: 85, y: 55 }
+      position: { x: 65, y: 80 }
     },
     fixtureType: 'aisle'
   },
   {
     id: '18',
     name: 'Cookies',
-    category: 'Snacks',
-    subcategory: 'Cookies',
+    category: 'Soups & Eggs and Non-perishable Food',
+    subcategory: 'Cookies (46)',
     location: {
-      section: 'snacks',
-      aisle: 6,
-      shelf: 'B',
-      position: { x: 90, y: 60 }
+      section: 'aisles',
+      aisle: 20,
+      shelf: 'A',
+      position: { x: 75, y: 75 }
     },
     fixtureType: 'aisle'
   },
-
-  // Bakery Section
   {
     id: '19',
-    name: 'Bread',
-    category: 'Bakery',
-    subcategory: 'Bread',
+    name: 'Eggs',
+    category: 'Soups & Eggs and Non-perishable Food',
+    subcategory: 'Eggs & Non‑perishable Dairy (48)',
     location: {
-      section: 'bakery',
-      aisle: 7,
-      shelf: 'A',
-      position: { x: 15, y: 85 }
-    },
-    fixtureType: 'peripheral'
-  },
-  {
-    id: '20',
-    name: 'Bagels',
-    category: 'Bakery',
-    subcategory: 'Bread',
-    location: {
-      section: 'bakery',
-      aisle: 7,
+      section: 'aisles',
+      aisle: 20,
       shelf: 'B',
-      position: { x: 25, y: 90 }
+      position: { x: 85, y: 70 }
     },
-    fixtureType: 'peripheral'
-  },
-
-  // Deli Section
-  {
-    id: '21',
-    name: 'Sliced Turkey',
-    category: 'Deli',
-    subcategory: 'Meat',
-    location: {
-      section: 'deli',
-      aisle: 8,
-      shelf: 'A',
-      position: { x: 55, y: 85 }
-    },
-    fixtureType: 'peripheral'
-  },
-  {
-    id: '22',
-    name: 'Ham',
-    category: 'Deli',
-    subcategory: 'Meat',
-    location: {
-      section: 'deli',
-      aisle: 8,
-      shelf: 'B',
-      position: { x: 60, y: 90 }
-    },
-    fixtureType: 'peripheral'
+    fixtureType: 'aisle'
   }
 ];
 
-// Commonly searched items for autocomplete
+// Popular items for autocomplete
 export const popularItems = [
-  'Bananas', 'Apples', 'Milk', 'Bread', 'Eggs', 'Chicken Breast',
-  'Ground Beef', 'Cheese', 'Yogurt', 'Orange Juice', 'Lettuce',
-  'Tomatoes', 'Carrots', 'Frozen Pizza', 'Ice Cream', 'Potato Chips'
+  'Bananas', 'Oranges', 'Apples', 'Grapes', 'Carrots', 'Lettuce', 
+  'Pre-cut Vegetables', 'Frozen Vegetables', 'Frozen Pizza', 'Bread',
+  'Milk', 'Mediterranean Food', 'Salad Dressing', 'Potato Chips', 
+  'Beer', 'Water', 'Soda', 'Cookies', 'Eggs'
 ];
